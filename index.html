@@ -41,7 +41,7 @@ $.ajax({
      url: 
      */
  jQuery.ajaxSetup({async:false});
-$.get("https://script.google.com/macros/s/AKfycbxO5fH2apWVHp9Ip3g_5WM6N925ZMSAioAi2yVZENCPYKEn6ZZH/exec",
+$.get("",
 	function(data) {   					
 		for(var i = 0; i < 59; i++) {   
 			var obj = data.user[i];      
@@ -49,7 +49,7 @@ $.get("https://script.google.com/macros/s/AKfycbxO5fH2apWVHp9Ip3g_5WM6N925ZMSAio
 			if (Number.isInteger(obj.id)){  
 				var element= document.getElementById("btn"+i); 
 				if (typeof(element)!= 'undefined' && element!=null){
-					$("#"+"btn"+(obj.id-1)).addClass("btn btn-danger").prop('disabled', true)
+					$("#"+"btn"+(obj.id-1)).addClass("btn btn-danger");
 				}
 			}
 		} 
@@ -95,7 +95,7 @@ $(document).ready(function(){
             });
    });  
 
-$.get("https://script.google.com/macros/s/AKfycbxO5fH2apWVHp9Ip3g_5WM6N925ZMSAioAi2yVZENCPYKEn6ZZH/exec",
+$.get("",
 	function(data) {   
 					  //alert("a");
 		for(var i = 0; i < 59; i++) {   
@@ -105,7 +105,7 @@ $.get("https://script.google.com/macros/s/AKfycbxO5fH2apWVHp9Ip3g_5WM6N925ZMSAio
 			if (Number.isInteger(obj.id)){  
 				var element= document.getElementById("btn"+i); 
 				if (typeof(element)!= 'undefined' && element!=null){
-					$("#"+"btn"+(obj.id-1)).addClass("btn btn-danger").prop('disabled', true);
+					$("#"+"btn"+(obj.id-1)).addClass("btn btn-danger");
 				}
 			}
 		} 
