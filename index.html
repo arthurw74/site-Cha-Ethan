@@ -45,10 +45,11 @@ $.get("https://script.google.com/macros/s/AKfycbzS12-BKpeegY3rjHS79Ire-xkYr4yLy_
 		for(var i = 0; i < 79; i++) {   
 			var obj = data.user[i];      
 						  //console.log(obj.id);
-			if (Number.isInteger(obj.name)){  
+						  //alert(obj.numeto);
+			if (Number.isInteger(obj.numero)){  
 				var element= document.getElementById("btn"+i); 
 				if (typeof(element)!= 'undefined' && element!=null){
-					$("#"+"btn"+(obj.name-1)).addClass("btn btn-danger").prop('disabled', true)
+					$("#"+"btn"+(obj.numero-1)).addClass("btn btn-danger").prop('disabled', true)
 				}
 			}
 		} 
@@ -100,12 +101,12 @@ $.get("https://script.google.com/macros/s/AKfycbzS12-BKpeegY3rjHS79Ire-xkYr4yLy_
 			//apos encerar o tempo $("#"+"btn"+i).prop('disabled', true);  
 			var obj = data.user[i];      
 						  //console.log(obj.id);
-			if (Number.isInteger(obj.name)){  
+			if (Number.isInteger(obj.numero)){  
 				//alert(obj.id)
 				var element= document.getElementById("btn"+i); 
 				if (typeof(element)!= 'undefined' && element!=null){
-					$("#"+"btn"+(obj.name-1)).addClass("btn btn-danger").prop('disabled', true);
-					//alert(obj.name)
+					$("#"+"btn"+(obj.numero-1)).addClass("btn btn-danger").prop('disabled', true);
+					//alert(obj.numero)
 				}
 			}
 		} 
@@ -121,7 +122,7 @@ $.get("https://script.google.com/macros/s/AKfycbzS12-BKpeegY3rjHS79Ire-xkYr4yLy_
 </script>	
 <style>
 #parallaxBar1{
-    height: auto ;
+    height: 100% ;
     background: url('ethan.jpg') ;
     position: relative; 
     background-attachment: fixed;
