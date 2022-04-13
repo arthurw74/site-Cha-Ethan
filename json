@@ -1,0 +1,36 @@
+function doGet(e){
+
+ var ss = SpreadsheetApp.openByUrl(URL da sua planilha do google");
+
+//Nome da Planilha, Alterar Planilha. Ou qualquer outro nome que desejar
+ var sheet = ss.getSheetByName("planilha");
+  
+ return getUsers(sheet); 
+  
+}
+
+
+function getUsers(sheet){
+  var jo = {};
+  var dataArray = [];
+
+// coletando dados da 2ª linha, 1ª coluna até a última linha e última coluna
+  var rows = sheet.getRange(2,1,sheet.getLastRow()-1, sheet.getLastColumn()).getValues();
+  
+  for(var i = 0, l= rows.length; i<l ; i++){
+    var dataRow = rows[i];
+    var record = {};
+    record['data'] = dataRow[0];
+    record['numero'] = dataRow[1];
+    
+    dataArray.push(record);
+    
+  }  
+  
+  jo.user = dataArray;
+  
+  var result = JSON.stringify(jo);
+  
+  return ContentService.createTextOutput(result).setMimeType(ContentService.MimeType.JSON);
+  
+} 
